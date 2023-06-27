@@ -1,0 +1,27 @@
+.block {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  cursor: pointer;
+}
+
+.button {
+  min-width: 32px;
+  height: 32px;
+
+  cursor: pointer;
+  border: none;
+
+  background: url('./img/arrow.svg') no-repeat center;
+
+  transition: all 0.2s ease-in-out;
+}

@@ -1,0 +1,44 @@
+.search {
+  top: 24px;
+  position: sticky;
+  min-width: 408px;
+  height: fit-content;
+}
+
+.header {
+  color: #1B1F23;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.label {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input {
+  padding: 10px 16px;
+
+  border-radius: 8px;
+  border: 1px solid #E1E3E6;
+  
+  font-size: 14px;
+  //font-family: SF Pro Text;
+  line-height: 20px;
+}
+
+.select {
+  cursor: pointer;
+}
