@@ -1,6 +1,7 @@
 .item {
   display: grid;
-  //grid-
+  grid-template-columns: 100px 1fr 79px;
+  gap: 24px;
 }
 
 .poster {
@@ -8,4 +9,9 @@
   height: 120px;
   border-radius: 8px;
   object-fit: cover;
+  grid-column: 1;
+}
+
+.shortDesc {
+  grid-column: 2;
 }

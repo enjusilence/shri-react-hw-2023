@@ -15,8 +15,10 @@ export const FilmCardSmall: FC<Props> = ({ movieData }) => {
   return (
     <BasicBlock as={'li'} className={styles.item}>
       <img src={posterUrl} alt={title} className={styles.poster}/>
-      <Link href={`/movie/${id}`}><h3>{title}</h3></Link>
-      <p>{genre}</p>
+      <div className={styles.shortDesc}>
+        <Link href={`/movie/${id}`}><h3>{title}</h3></Link>
+        <p className={styles.genre}>{genre}</p>
+      </div>
       <TicketCounter movieID={id}/>
     </BasicBlock>
   );

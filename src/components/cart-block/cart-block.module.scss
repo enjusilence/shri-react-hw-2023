@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px
+}
+
+.ticketCount {
+  display: block;
+  text-align: center;
+
+  min-width: 28px;
+  height: 28px;
+  padding: 4px;
+  
+  border-radius: 8px;
+  background: #FF5500;
+
+  color:  #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
