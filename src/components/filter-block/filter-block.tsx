@@ -4,26 +4,18 @@ import { BasicBlock } from '../basic-block/basic-block';
 import { Cinema } from '@/const/types';
 import { DropDownMenu } from '../dropdown-menu/dropdown-menu';
 import classNames from 'classnames';
-import { Filter } from '@/app/page';
+import { Filter, FilterFormData } from '@/app/page';
 
 interface Props {
-  setFilterFunc: Dispatch<SetStateAction<Filter>>,
+  formData: FilterFormData,
+  setFormData: Dispatch<SetStateAction<FilterFormData>>,
   cinemaList: Cinema[],
   genreList: string[],
 }
 
-export const FilterBlock: FC<Props> = ({ cinemaList, genreList, setFilterFunc }) => {
+export const FilterBlock: FC<Props> = ({ cinemaList, genreList, formData, setFormData }) => {
   const [isGenresOpen, setIsGenresOpen] = useState(false);
   const [isCinemasOpen, setIsCinemasOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    searchName: '',
-    searchGenre: '',
-    searchCinema: '',
-  })
-
-  const composeFilterFunc = () => {
-    
-  }
 
   const handleInputChange = (evt: ChangeEvent<HTMLInputElement>) => {
     setFormData({...formData, searchName: evt.target.value});

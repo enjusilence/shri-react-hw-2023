@@ -10,6 +10,8 @@ export const fetchCinemas = async () => (await fetch(`${BASE_URL}cinemas`)).json
 
 export const fetchMovies = async (): Promise<Movie[]> => (await fetch(`${BASE_URL}movies`)).json();
 
+export const fetchMoviesByCinemaID = async (id: string): Promise<Movie[]> => (await fetch(`${BASE_URL}movies?cinemaId=${id}`)).json();
+
 export const fetchMovieByID = async (id: string) => (await fetch(`${BASE_URL}movie?movieId=${id}`)).json();
 
 // Отзывы
