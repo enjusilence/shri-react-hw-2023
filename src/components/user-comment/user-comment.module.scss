@@ -1,0 +1,34 @@
+.card {
+  display: grid;
+  min-height: 148px;
+  grid-template-columns: 100px 1fr 107px;
+  grid-template-rows: 32px 1fr;
+  gap: 0 32px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  border-radius: 8px;
+  background: #E0E0E0 url('./img/placeholder.svg') no-repeat center;
+}
+
+.name {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.text {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 2;
+}
+
+.rating {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+}

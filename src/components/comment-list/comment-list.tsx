@@ -12,7 +12,7 @@ export const CommentList: FC<Props> = ({ isLoading, commentList }) => {
   if (isLoading || !commentList) return <span>Loading...</span>;
 
   return (
-    <ul>
+    <ul className={styles.list}>
       {commentList.map(i => <UserComment key={i.id} commentData={i}/>)}
     </ul>
   );

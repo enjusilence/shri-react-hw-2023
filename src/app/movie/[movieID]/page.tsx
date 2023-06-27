@@ -15,7 +15,7 @@ export default function Movie() {
   const commentsQuery = useQuery(['comments', movieID], () => fetchCommentsByID(movieID));
 
   return (
-    <Main>
+    <Main className={styles.main}>
       <FilmCardLarge movieData={movieQuery.data} isLoading={movieQuery.isLoading}/>
       <CommentList commentList={commentsQuery.data} isLoading={commentsQuery.isLoading}/>
     </Main>
