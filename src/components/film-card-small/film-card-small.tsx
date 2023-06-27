@@ -6,10 +6,11 @@ import { TicketCounter } from '../ticket-counter/ticket-counter';
 import Link from 'next/link';
 
 interface Props {
+  isDeleteActive: boolean,
   movieData: Movie,
 }
 
-export const FilmCardSmall: FC<Props> = ({ movieData }) => {
+export const FilmCardSmall: FC<Props> = ({ movieData, isDeleteActive }) => {
   const { id, title, genre, posterUrl } = movieData;
 
   return (
@@ -19,7 +20,7 @@ export const FilmCardSmall: FC<Props> = ({ movieData }) => {
         <Link href={`/movie/${id}`}><h3>{title}</h3></Link>
         <p className={styles.genre}>{genre}</p>
       </div>
-      <TicketCounter movieID={id}/>
+      <TicketCounter movieID={id} isDeleteActive={isDeleteActive}/>
     </BasicBlock>
   );
 }

@@ -25,4 +25,14 @@
       }
     }
   }
+
+  .deleteButton {
+    background-color: #FFFFFF;
+
+    cursor: pointer;
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
 }

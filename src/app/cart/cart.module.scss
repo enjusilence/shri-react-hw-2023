@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+
+  color: #1B1F23;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+}
