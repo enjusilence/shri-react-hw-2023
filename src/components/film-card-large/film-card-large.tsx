@@ -3,6 +3,7 @@ import { BasicBlock } from '../basic-block/basic-block';
 import styles from './film-card-large.module.scss';
 import { FC } from 'react';
 import { TicketCounter } from '../ticket-counter/ticket-counter';
+import { translateGenre } from '@/utils/translateGenre';
 
 interface Props {
   isLoading: boolean,
@@ -19,14 +20,14 @@ export const FilmCardLarge: FC<Props> = ({ isLoading, movieData }) => {
       <img src={posterUrl} alt={title} className={styles.poster}/>
       <h1>{title}</h1>
       <div className={styles.shortDescription}>
-        <p><b>Жанр:</b> {genre}</p>
+        <p><b>Жанр:</b> {translateGenre(genre)}</p>
         <p><b>Год выпуска:</b> {releaseYear}</p>
         <p><b>Рейтинг:</b> {rating}</p>
         <p><b>Режиссер:</b> {director}</p>
       </div>
       <p className={styles.descTitle}><b>Описание</b></p>
       <p className={styles.description}>{description}</p>
-      <TicketCounter movieID={id} />
+      <TicketCounter movieID={id} isDeleteActive={false} />
     </BasicBlock>
   );
 }

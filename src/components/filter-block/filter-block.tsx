@@ -5,6 +5,7 @@ import { Cinema } from '@/const/types';
 import { DropDownMenu } from '../dropdown-menu/dropdown-menu';
 import classNames from 'classnames';
 import { Filter, FilterFormData } from '@/app/page';
+import { translateGenre } from '@/utils/translateGenre';
 
 interface Props {
   formData: FilterFormData,
@@ -48,11 +49,11 @@ export const FilterBlock: FC<Props> = ({ cinemaList, genreList, formData, setFor
         <label className={styles.label}>
           Жанр
           <select id='searchGenre' className={classNames(styles.input, styles.select)} onMouseDown={handleGenresClick} value={formData.searchGenre}>
-            <option value="" disabled selected hidden>Выберете жанр</option>
-            {genreList.map(genre => <option value={genre}>{genre}</option>)}
+            <option value='' disabled hidden>Выберете жанр</option>
+            {genreList.map(genre => <option value={genre}>{translateGenre(genre)}</option>)}
           </select>
           {isGenresOpen && <DropDownMenu
-            optionList={genreList.map(genre => ({optionID: genre, optionValue: genre}))}
+            optionList={genreList.map(genre => ({optionID: genre, optionValue: translateGenre(genre)}))}
             closeMenu={() => setIsGenresOpen(false)}
             selectOption={(optionID) => handleOptionChange('searchGenre', optionID)}
           />}
@@ -60,7 +61,7 @@ export const FilterBlock: FC<Props> = ({ cinemaList, genreList, formData, setFor
         <label className={styles.label}>
           Кинотеатр
           <select id='searchCinema' className={classNames(styles.input, styles.select)} onMouseDown={handleCinemasClick} value={formData.searchCinema}>
-            <option value="" disabled selected hidden>Выберете кинотеатр</option>
+            <option value='' disabled hidden>Выберете кинотеатр</option>
             {cinemaList.map(i => <option value={i.id}>{i.name}</option>)}
           </select>
           {isCinemasOpen && <DropDownMenu

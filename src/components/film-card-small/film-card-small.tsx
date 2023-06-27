@@ -4,6 +4,7 @@ import styles from './film-card-small.module.scss';
 import { Movie } from '@/const/types';
 import { TicketCounter } from '../ticket-counter/ticket-counter';
 import Link from 'next/link';
+import { translateGenre } from '@/utils/translateGenre';
 
 interface Props {
   isDeleteActive: boolean,
@@ -18,7 +19,7 @@ export const FilmCardSmall: FC<Props> = ({ movieData, isDeleteActive }) => {
       <img src={posterUrl} alt={title} className={styles.poster}/>
       <div className={styles.shortDesc}>
         <Link href={`/movie/${id}`}><h3>{title}</h3></Link>
-        <p className={styles.genre}>{genre}</p>
+        <p className={styles.genre}><i>{translateGenre(genre)}</i></p>
       </div>
       <TicketCounter movieID={id} isDeleteActive={isDeleteActive}/>
     </BasicBlock>
