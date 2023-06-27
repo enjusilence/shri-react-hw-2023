@@ -20,7 +20,7 @@ export const DropDownMenu: FC<Props> = ({ optionList, closeMenu, selectOption })
 
   return (
     <ul className={styles.list}>
-      {optionList.map(i => <li className={styles.item} onClick={() => handleOnClick(i.optionID)}>{i.optionValue}</li>)}
+      {optionList.map(i => <li key={i.optionID} className={styles.item} onClick={() => handleOnClick(i.optionID)}>{i.optionValue}</li>)}
     </ul>
   );
 }

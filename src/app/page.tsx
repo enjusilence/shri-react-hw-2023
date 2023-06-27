@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <Main className={styles.main}>
       <FilterBlock genreList={genreList} cinemaList={cinemaQuery.data} formData={filterFormData} setFormData={setFilterFormData}/>
-      <FilmList movieList={movieList}/>
+      <FilmList movieList={movieList} isDeleteActive={false}/>
     </Main>
   );
 }

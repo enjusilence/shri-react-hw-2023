@@ -50,7 +50,7 @@ export const FilterBlock: FC<Props> = ({ cinemaList, genreList, formData, setFor
           Жанр
           <select id='searchGenre' className={classNames(styles.input, styles.select)} onMouseDown={handleGenresClick} value={formData.searchGenre}>
             <option value='' disabled hidden>Выберете жанр</option>
-            {genreList.map(genre => <option value={genre}>{translateGenre(genre)}</option>)}
+            {genreList.map(genre => <option key={genre} value={genre}>{translateGenre(genre)}</option>)}
           </select>
           {isGenresOpen && <DropDownMenu
             optionList={genreList.map(genre => ({optionID: genre, optionValue: translateGenre(genre)}))}
@@ -62,7 +62,7 @@ export const FilterBlock: FC<Props> = ({ cinemaList, genreList, formData, setFor
           Кинотеатр
           <select id='searchCinema' className={classNames(styles.input, styles.select)} onMouseDown={handleCinemasClick} value={formData.searchCinema}>
             <option value='' disabled hidden>Выберете кинотеатр</option>
-            {cinemaList.map(i => <option value={i.id}>{i.name}</option>)}
+            {cinemaList.map(i => <option key={i.id} value={i.id}>{i.name}</option>)}
           </select>
           {isCinemasOpen && <DropDownMenu
             optionList={cinemaList.map(i => ({optionID: i.id, optionValue: i.name}))}
